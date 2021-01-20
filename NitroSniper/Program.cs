@@ -189,7 +189,7 @@ namespace NitroSniper
                         string output = "Found code ".Pastel(Color.CornflowerBlue) + code.Pastel(Color.Cyan) + channel.Pastel(Color.LightSkyBlue);
                         if (json.Consumed)
                         {
-                            await LogAsync(output + $" Enjoy your {json.Subscription_Plan["name"]} :DD".Pastel(Color.Green), e.Client, COLOR_GREEN).ConfigureAwait(false);
+                            await LogAsync(output + $" Enjoy your {json.Subscription_Plan["name"]} :DD".Pastel(Color.LightGreen), e.Client, COLOR_GREEN).ConfigureAwait(false);
                         }
                         else
                         {
