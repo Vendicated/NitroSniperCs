@@ -47,8 +47,4 @@ Make sure you have dotnet-core [installed](https://docs.microsoft.com/en-gb/dotn
 ```bash
 dotnet NitroSniper.dll
 ```
-### Docker
-```bash
-docker pull ghcr.io/vendicated/nitrosniper
-docker run vendicated/nitrosniper  --env MASTER_TOKEN=YourToken --env USER_AGENT="Your User Agent" --env DISCORD_WEBHOOK=YourDiscordWebhook --env SLAVE_TOKENS="Token1 Token2 Token3"
-```
+
