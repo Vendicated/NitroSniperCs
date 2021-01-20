@@ -10,17 +10,16 @@
     <NoWarn>1701;1702</NoWarn>
   </PropertyGroup>
 
-  <ItemGroup>
-	<Content Include="config.json">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Content>
-	<Content Include="config.example.json" CopyToPublishDirectory="PreserveNewest">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Content>
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DSharpPlus" Version="3.2.3" />
+		<PackageReference Include="Pastel" Version="2.1.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="DSharpPlus" Version="3.2.3" />
-    <PackageReference Include="Pastel" Version="2.1.0" />
-  </ItemGroup>
+	<Target Name="CopyConfig" AfterTargets="AfterBuild">
+		<Copy SourceFiles="config.json" DestinationFolder="$(OutDir)" />
+	</Target>
+	<Target Name="CopyConfigOnPub" AfterTargets="Publish">
+		<Copy SourceFiles="config.example.json" DestinationFiles="$(PublishDir)\config.json" />
+	</Target>
+
 </Project>
