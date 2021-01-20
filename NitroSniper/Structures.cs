@@ -5,9 +5,9 @@ namespace NitroSniper
     public class Config
     {
         public string Master { get; set; }
+        public IList<string> Slaves { get; set; }
         public string UserAgent { get; set; }
         public string Webhook { get; set; }
-        public IList<string> Slaves { get; set; }
     }
 
     public class DiscordResponse
@@ -19,10 +19,9 @@ namespace NitroSniper
 
     public class WebhookBody
     {
-        public string username;
         public string avatar_url;
         public IList<object> embeds;
-
+        public string username;
         public WebhookBody(string username, string avatarUrl, string description, int color)
         {
             this.username = username;
