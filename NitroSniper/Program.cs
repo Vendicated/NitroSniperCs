@@ -203,6 +203,8 @@ namespace NitroSniper
                 Console.WriteLine(message);
             }
 
+            Console.WriteLine("\nPress any key to close this window...");
+            Console.ReadKey();
             Environment.Exit(exitCode);
         }
     }
