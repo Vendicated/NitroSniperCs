@@ -35,6 +35,17 @@ namespace NitroSniper
 
         public static void Main()
         {
+            const string banner = @"
+        ███╗   ██╗██╗████████╗██████╗  ██████╗ ███████╗███╗   ██╗██╗██████╗ ███████╗██████╗ 
+        ████╗  ██║██║╚══██╔══╝██╔══██╗██╔═══██╗██╔════╝████╗  ██║██║██╔══██╗██╔════╝██╔══██╗
+        ██╔██╗ ██║██║   ██║   ██████╔╝██║   ██║███████╗██╔██╗ ██║██║██████╔╝█████╗  ██████╔╝
+        ██║╚██╗██║██║   ██║   ██╔══██╗██║   ██║╚════██║██║╚██╗██║██║██╔═══╝ ██╔══╝  ██╔══██╗
+        ██║ ╚████║██║   ██║   ██║  ██║╚██████╔╝███████║██║ ╚████║██║██║     ███████╗██║  ██║
+        ╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝
+";
+            Console.WriteLine(banner.Pastel(Color.CornflowerBlue));
+
+
             new Program().InitAsync().ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
@@ -92,7 +103,7 @@ namespace NitroSniper
                     }
                     catch
                     {
-                        Exit("INVALID SLAVE TOKEN ".Pastel(Color.Red) + slaveToken.Pastel(Color.Cyan), 1, false);
+                        Exit("INVALID SLAVE TOKEN ".Pastel(Color.Red) + slaveToken.Pastel(Color.CornflowerBlue), 1, false);
                     }
                 }
                 if (client is null) Exit("Something went wrong");
@@ -112,7 +123,7 @@ namespace NitroSniper
 
                 if (_attemptedCodes.Contains(code))
                 {
-                    await LogAsync($"Found duplicate code {code}. Skipping", e.Client, COLOR_CYAN);
+                    await LogAsync($"Found duplicate code {code}. Skipping".Pastel(Color.LightSkyBlue), e.Client, COLOR_CYAN);
                     continue;
                 }
 
@@ -136,7 +147,7 @@ namespace NitroSniper
 
                     string channel = $" [{(e.Guild == null ? e.Author.GetTag() : $"{e.Guild.Name} - { e.Channel.Name}")}]";
 
-                    string output = "Found code ".Pastel(Color.Cyan) + code.Pastel(Color.Magenta) + channel.Pastel(Color.Yellow);
+                    string output = "Found code ".Pastel(Color.CornflowerBlue) + code.Pastel(Color.Cyan) + channel.Pastel(Color.LightSkyBlue);
                     if (json.Consumed)
                     {
                         await LogAsync(output + $" Enjoy your {json.Subscription_Plan["name"]} :DD".Pastel(Color.Green), e.Client, COLOR_GREEN).ConfigureAwait(false);
@@ -148,7 +159,7 @@ namespace NitroSniper
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Something went wrong while redeeming code ".Pastel(Color.Red) + code.Pastel(Color.Cyan) + "\nPlease open an issue on https://github.com/Vendicated/NitroSniperCs/issues with a screenshot of this.");
+                    Console.WriteLine("Something went wrong while redeeming code ".Pastel(Color.Red) + code.Pastel(Color.CornflowerBlue) + "\nPlease open an issue on https://github.com/Vendicated/NitroSniperCs/issues with a screenshot of this.");
                     Console.WriteLine(ex);
                 }
             }
@@ -172,7 +183,7 @@ namespace NitroSniper
 
         private async Task ReadyHandler(ReadyEventArgs e)
         {
-            await LogAsync("Successfully connected to slave ".Pastel(Color.Cyan) + e.Client.CurrentUser.Username.Pastel(Color.Magenta) + $" with {e.Client.Guilds.Count} servers".Pastel(Color.Cyan), e.Client, COLOR_CYAN).ConfigureAwait(false);
+            await LogAsync("Successfully connected to slave ".Pastel(Color.CornflowerBlue) + e.Client.CurrentUser.Username.Pastel(Color.Cyan) + $" with {e.Client.Guilds.Count} servers".Pastel(Color.CornflowerBlue), e.Client, COLOR_CYAN).ConfigureAwait(false);
         }
 
         private void Exit(string message = "", int exitCode = 0, bool colourRed = true)
