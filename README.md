@@ -27,6 +27,18 @@ You will have to aquire your Discord User Agent and Token(s) - [Guide](https://g
   - slaves: A list of tokens of alt accounts (or alternatively your main), seperated by commas
   - webhook: A discord webhook link. This will be used to log discovered codes directly to discord. ([Guide](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks))
 
+
+### Example config
+  
+  ```json
+{
+    "master": "mfa._RL3NL2U5K0-9DG793KH7VVGXPAA8FYV6XOBQ11ADF_MDB0VRK1OTFM76JRCZHXUBTZ6RYZQY",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/0.0.309 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36",
+    "slaves": [ "mfa._1KWXL5P814-51JWFZ45RUQPYHY7M9D920LJS0HCJ7_TTI8T9KCAUF56TSEU1CO34TS10ARBT", "mfa._X0EC0GRRTP-SA9M6EAYGBOL1YEM588S80S4QV3UJX_MQHYVYIMRNG96FWBPI228CKK0BPTUG" ],
+    "webhook": "https://discord.com/api/webhooks/80121892182894627594/ASkjjsa991-sa29S-8sahjsjahshjSHAjhsjajhs"
+}
+  ```
+
 ## Run
 ### Windows
 Simply run `NitroSniper.exe`. You need the .NET core runtime to execute it, so [install it (Microsoft)](https://dotnet.microsoft.com/download/dotnet-core/current/runtime) if needed.
@@ -40,15 +52,3 @@ dotnet NitroSniper.dll
 docker pull ghcr.io/vendicated/nitrosniper
 docker run vendicated/nitrosniper  --env MASTER_TOKEN=YourToken --env USER_AGENT="Your User Agent" --env DISCORD_WEBHOOK=YourDiscordWebhook --env SLAVE_TOKENS="Token1 Token2 Token3"
 ```
-
-### Example result config
-  
-  ```json
-{
-    "master": "mfa._RL3NL2U5K0-9DG793KH7VVGXPAA8FYV6XOBQ11ADF_MDB0VRK1OTFM76JRCZHXUBTZ6RYZQY",
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/0.0.309 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36",
-    "slaves": [ "mfa._1KWXL5P814-51JWFZ45RUQPYHY7M9D920LJS0HCJ7_TTI8T9KCAUF56TSEU1CO34TS10ARBT", "mfa._X0EC0GRRTP-SA9M6EAYGBOL1YEM588S80S4QV3UJX_MQHYVYIMRNG96FWBPI228CKK0BPTUG" ],
-    "webhook": "https://discord.com/api/webhooks/80121892182894627594/ASkjjsa991-sa29S-8sahjsjahshjSHAjhsjajhs"
-}
-  ```
-
