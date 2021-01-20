@@ -30,10 +30,15 @@ You will have to aquire your Discord User Agent and Token(s) - [Guide](https://g
 ## Run
 ### Windows
 Simply run `NitroSniper.exe`. You need the .NET core runtime to execute it, so [install it (Microsoft)](https://dotnet.microsoft.com/download/dotnet-core/current/runtime) if needed.
-## Linux
+### Linux
 Make sure you have dotnet-core [installed](https://docs.microsoft.com/en-gb/dotnet/core/install/linux). Then simply run it via
 ```bash
 dotnet NitroSniper.dll
+```
+### Docker
+```bash
+docker pull ghcr.io/vendicated/nitrosniper
+docker run vendicated/nitrosniper  --env MASTER_TOKEN=YourToken --env USER_AGENT="Your User Agent" --env DISCORD_WEBHOOK=YourDiscordWebhook --env SLAVE_TOKENS="Token1 Token2 Token3"
 ```
 
 ### Example result config
