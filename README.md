@@ -26,7 +26,15 @@ You will have to aquire your Discord User Agent and Token(s) - [Guide](https://g
   - userAgent: This is the User Agent of your discord app
   - slaves: A list of tokens of alt accounts (or alternatively your main), seperated by commas
   - webhook: A discord webhook link. This will be used to log discovered codes directly to discord. ([Guide](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks))
-- Run `NitroSniper.exe`
+
+## Run
+### Windows
+Simply run `NitroSniper.exe`. You need the .NET core runtime to execute it, so [install it (Microsoft)](https://dotnet.microsoft.com/download/dotnet-core/current/runtime) if needed.
+## Linux
+Make sure you have dotnet-core [installed](https://docs.microsoft.com/en-gb/dotnet/core/install/linux). Then simply run it via
+```bash
+dotnet NitroSniper.dll
+```
 
 ### Example result config
   
