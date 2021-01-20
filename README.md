@@ -19,16 +19,16 @@ This tool can use 1 or multiple discord accounts. These will be differentiated i
 You will have to aquire your Discord User Agent and Token(s) - [Guide](https://gist.github.com/Vendicated/e7318adb486bb507facb70539e188c1c)
 
 ## Setup
-- Download the latest Release and unzip it
+- [Download the latest Release](https://github.com/Vendicated/NitroSniperCs/releases/) and unzip it
 - Open `config.json` with your favourite text editor
 - Fill out its field accordingly:
   - master: this is the token of your main account where discovered codes will be redeemed
   - userAgent: This is the User Agent of your discord app
   - slaves: A list of tokens of alt accounts (or alternatively your main), seperated by commas
   - webhook: A discord webhook link. This will be used to log discovered codes directly to discord. ([Guide](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks))
-- Run `NitroSniper.exe`
 
-### Example result config
+
+### Example config
   
   ```json
 {
@@ -38,4 +38,13 @@ You will have to aquire your Discord User Agent and Token(s) - [Guide](https://g
     "webhook": "https://discord.com/api/webhooks/80121892182894627594/ASkjjsa991-sa29S-8sahjsjahshjSHAjhsjajhs"
 }
   ```
+
+## Run
+### Windows
+Simply run `NitroSniper.exe`. You need the .NET core runtime to execute it, so [install it (Microsoft)](https://dotnet.microsoft.com/download/dotnet-core/current/runtime) if needed.
+### Linux
+Make sure you have dotnet-core [installed](https://docs.microsoft.com/en-gb/dotnet/core/install/linux). Then simply run it via
+```bash
+dotnet NitroSniper.dll
+```
 
