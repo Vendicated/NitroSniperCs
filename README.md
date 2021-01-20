@@ -19,8 +19,8 @@ This tool can use 1 or multiple discord accounts. These will be differentiated i
 You will have to aquire your Discord User Agent and Token(s) - [Guide](https://gist.github.com/Vendicated/e7318adb486bb507facb70539e188c1c)
 
 ## Setup
-- Download the latest Release
-- Rename `config.example.json` to `config.json`. Open it with your favourite text editor
+- Download the latest Release and unzip it
+- Open `config.json` with your favourite text editor
 - Fill out its field accordingly:
   - master: this is the token of your main account where discovered codes will be redeemed
   - userAgent: This is the User Agent of your discord app
