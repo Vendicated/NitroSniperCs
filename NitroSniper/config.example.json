@@ -1,6 +1,6 @@
 ﻿{
-	"master": "MAIN_ACCOUNT_TOKEN",
-	"userAgent": "FULL_DISCORD_USER_AGENT",
-	"slaves:" ["ALT_ACCOUNT1", "ALT_ACCOUNT2 ..."],
-	"webhook": "DISCORD_WEBHOOK_URL"
+	"master": "",
+	"userAgent": "",
+	"slaves": [],
+	"webhook": ""
 }
