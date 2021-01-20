@@ -65,10 +65,13 @@ namespace NitroSniper
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(_config.Master);
             _client.DefaultRequestHeaders.Add("User-Agent", _config.UserAgent);
 
-            _webhookClient = new HttpClient
+            if (!string.IsNullOrEmpty(_config.Webhook))
             {
-                BaseAddress = new Uri(_config.Webhook)
-            };
+                _webhookClient = new HttpClient
+                {
+                    BaseAddress = new Uri(_config.Webhook)
+                };
+            }
         }
 
         public async Task InitAsync()
@@ -169,15 +172,18 @@ namespace NitroSniper
         {
             Console.WriteLine($"{DateTime.Now.ToString("T").Pastel(Color.LightBlue)} - {_hyperlinkMatcher.Replace(text, "$1")}");
 
-            try
+            if (_webhookClient != null)
             {
-                var body = new WebhookBody(client.CurrentUser.GetTag(), client.CurrentUser.GetAvatarUrl(ImageFormat.WebP), _ansiMatcher.Replace(text, ""), hex);
-                var strBody = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
-                await _webhookClient.PostAsync("", strBody).ConfigureAwait(false);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
+                try
+                {
+                    var body = new WebhookBody(client.CurrentUser.GetTag(), client.CurrentUser.GetAvatarUrl(ImageFormat.WebP), _ansiMatcher.Replace(text, ""), hex);
+                    var strBody = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
+                    await _webhookClient.PostAsync("", strBody).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
         }
 
