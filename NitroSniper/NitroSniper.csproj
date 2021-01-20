@@ -15,11 +15,16 @@
 		<PackageReference Include="Pastel" Version="2.1.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<ReleaseFilesIn Include="config.example.json;..\README.md"/>
+		<ReleaseFilesOut Include="config.json;..\README.md"/>
+	</ItemGroup>
+	
 	<Target Name="CopyConfig" AfterTargets="AfterBuild">
 		<Copy SourceFiles="config.json" DestinationFolder="$(OutDir)" />
 	</Target>
 	<Target Name="CopyConfigOnPub" AfterTargets="Publish">
-		<Copy SourceFiles="config.example.json" DestinationFiles="$(PublishDir)\config.json" />
+		<Copy SourceFiles="@(ReleaseFilesIn)" DestinationFiles="@(ReleaseFilesOut->'$(PublishDir)\%(Filename)%(Extension)')" />
 	</Target>
 
 </Project>
