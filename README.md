@@ -1,7 +1,6 @@
 ![Screenshot](https://ven.totallysuspicious.website/4Eoq8y8.png)
 <hr>
-A discord selfbot that automatically detects discord nitro codes in messages and attempts to redeem
-<br />
+A discord selfbot that automatically detects discord nitro codes in messages and attempts to redeem them
 
 ⚠️ THIS TOOL VIOLATES DISCORDS TERMS OF SERVICE AND MIGHT GET YOU PERMAMENTLY BANNED. USE AT YOUR OWN RISK!
 
