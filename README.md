@@ -1,16 +1,9 @@
-```
-███╗   ██╗██╗████████╗██████╗  ██████╗ ███████╗███╗   ██╗██╗██████╗ ███████╗██████╗ 
-████╗  ██║██║╚══██╔══╝██╔══██╗██╔═══██╗██╔════╝████╗  ██║██║██╔══██╗██╔════╝██╔══██╗
-██╔██╗ ██║██║   ██║   ██████╔╝██║   ██║███████╗██╔██╗ ██║██║██████╔╝█████╗  ██████╔╝
-██║╚██╗██║██║   ██║   ██╔══██╗██║   ██║╚════██║██║╚██╗██║██║██╔═══╝ ██╔══╝  ██╔══██╗
-██║ ╚████║██║   ██║   ██║  ██║╚██████╔╝███████║██║ ╚████║██║██║     ███████╗██║  ██║
-╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝
-```
-
-A discord selfbot that automatically detects discord nitro codes in messages and attempts to redeem
-
 ![Screenshot](https://ven.totallysuspicious.website/4Eoq8y8.png)
-> ⚠️ THIS TOOL VIOLATES DISCORDS TERMS OF SERVICE AND MIGHT GET YOU PERMAMENTLY BANNED. USE AT YOUR OWN RISK!
+<hr>
+A discord selfbot that automatically detects discord nitro codes in messages and attempts to redeem
+<br />
+
+⚠️ THIS TOOL VIOLATES DISCORDS TERMS OF SERVICE AND MIGHT GET YOU PERMAMENTLY BANNED. USE AT YOUR OWN RISK!
 
 ## Explanation
 This tool can use 1 or multiple discord accounts. These will be differentiated into two categories:
