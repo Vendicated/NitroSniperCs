@@ -1,6 +1,15 @@
 ﻿{
 	"master": "",
 	"userAgent": "",
-	"slaves": [],
+	"slaves": [
+		{
+			"token": "",
+			"isBotAccount": false
+		},
+		{
+			"token": "",
+			"isBotAccount": true
+		}
+	],
 	"webhook": ""
 }

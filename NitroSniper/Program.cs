@@ -75,45 +75,26 @@ namespace NitroSniper
 
         public async Task InitAsync()
         {
-            foreach (var slaveToken in _config.Slaves)
+            foreach (var slave in _config.Slaves)
             {
-                DiscordClient? client = null;
-
                 try
                 {
-                    client = new DiscordClient(
-                        new DiscordConfiguration()
-                        {
-                            Token = slaveToken,
-                            TokenType = TokenType.User
-                        });
+                    var client = new DiscordClient(new DiscordConfiguration()
+                    {
+                        Token = slave.Token,
+                        TokenType = slave.IsBotAccount ? TokenType.Bot : TokenType.User
+                    });
 
                     await client.ConnectAsync().ConfigureAwait(false);
+
+                    client.Ready += ReadyHandler;
+                    client.MessageCreated += MessageHandler;
                 }
                 catch
                 {
-                    try
-                    {
-                        client = new DiscordClient(
-                        new DiscordConfiguration()
-                        {
-                            Token = slaveToken,
-                            TokenType = TokenType.Bot
-                        });
-
-                        await client.ConnectAsync().ConfigureAwait(false);
-                    }
-                    catch
-                    {
-                        Exit("INVALID SLAVE TOKEN ".Pastel(Color.Red) + slaveToken.Pastel(Color.CornflowerBlue), 1, false);
-                    }
+                    Exit("INVALID SLAVE TOKEN ".Pastel(Color.Red) + slave.Token.Pastel(Color.CornflowerBlue), 1, false);
                 }
-                if (client is null) Exit("Something went wrong");
-
-                client!.Ready += ReadyHandler;
-                client!.MessageCreated += MessageHandler;
             }
-
             await Task.Delay(-1).ConfigureAwait(false);
         }
 

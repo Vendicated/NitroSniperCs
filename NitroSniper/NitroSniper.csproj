@@ -16,8 +16,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ReleaseFilesIn Include="config.example.json;..\README.md"/>
-		<ReleaseFilesOut Include="config.json;README.md"/>
+		<ReleaseFilesIn Include="config.example.json;..\README.md" />
+		<ReleaseFilesOut Include="config.json;README.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="config.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 	
 	<Target Name="CopyConfig" AfterTargets="AfterBuild" Condition="'$(Configuration)'=='Debug'">

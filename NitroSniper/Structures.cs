@@ -2,10 +2,15 @@
 
 namespace NitroSniper
 {
+    public struct SlaveToken
+    {
+        public bool IsBotAccount { get; set; }
+        public string Token { get; set; }
+    }
     public class Config
     {
         public string Master { get; set; }
-        public IList<string> Slaves { get; set; }
+        public IList<SlaveToken> Slaves { get; set; }
         public string UserAgent { get; set; }
         public string Webhook { get; set; }
     }
